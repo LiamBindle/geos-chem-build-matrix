@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-variables: |
+variables: 
   ZLIB_COMMON:        1.2.11
   HDF5_COMMON:        1.10.5
   NETCDF_C_NEW:       4.7.1
