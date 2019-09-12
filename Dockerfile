@@ -35,13 +35,14 @@ RUN curl -L -o hdf5.tar.bz2 http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-${
 
 # Install NetCDF
 ARG NetCDF_C_VERSION
-RUN curl -L -o netcdf-c.tar.gz https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-${NetCDF_C_VERSION}.tar.gz \
-&&  tar -xzvf netcdf-c.tar.gz --strip-components 1 \
+RUN wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-${NetCDF_C_VERSION}.zip \
+&&  unzip netcdf-c-${NetCDF_C_VERSION}.zip \
+&&  cd netcdf-c-${NetCDF_C_VERSION} \
 &&  ./configure --prefix=/usr/local \
 &&  make -j3 \
 &&  make check \
 &&  make install \
-&&  rm -rf *
+&&  cd .. && rm -rf netcdf-c-${NetCDF_C_VERSION}*
 
 # Install NetCDF-Fortran
 ARG NetCDF_Fortran_VERSION
