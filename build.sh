@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # # Declare dependency versions
+echo "gcc version:            ${GCC_VERSION}"
+echo "zlib version:           ${ZLIB_VERSION}"
+echo "hdf5 version:           ${HDF5_VERSION}"
+echo "netcdf-c version:       ${NetCDF_C_VERSION}"
+echo "netcdf-fortran version: ${NetCDF_Fortran_VERSION}"
 # GCC_VERSION=6
 # ZLIB_VERSION=1.2.11
 # HDF5_VERSION=1.10.5
