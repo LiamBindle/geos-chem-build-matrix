@@ -41,11 +41,12 @@ steps:
     command: build
     repository: liambindle/gcc-netcdf-c-netcdf-fortran
     tags: $(GCC_VERSION)-$(NETCDF_C_VERSION)-$(NETCDF_FORTRAN_VERSION)
-    arguments: --build-arg GCC_VERSION=${GCC_VERSION} 
-      --build-arg ZLIB_VERSION=${ZLIB_VERSION} 
-      --build-arg HDF5_VERSION=${HDF5_VERSION} 
-      --build-arg NetCDF_C_VERSION=${NETCDF_C_VERSION} 
-      --build-arg NetCDF_Fortran_VERSION=${NetCDF_FORTRAN_VERSION}
+    arguments: |
+      --build-arg GCC_VERSION=$(GCC_VERSION)
+      --build-arg ZLIB_VERSION=$(ZLIB_VERSION) 
+      --build-arg HDF5_VERSION=$(HDF5_VERSION) 
+      --build-arg NetCDF_C_VERSION=$(NETCDF_C_VERSION)
+      --build-arg NetCDF_Fortran_VERSION=$(NetCDF_FORTRAN_VERSION)
 - task: Docker@2
   displayName: Push image
   inputs:
