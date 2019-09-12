@@ -19,25 +19,28 @@ variables:
 # Images to build
 strategy:
   matrix:
-    # gcc4:
-    #   GCC_VERSION: 4
-    #   ZLIB_VERSION: $(ZLIB_COMMON)
-    #   HDF5_VERSION: $(HDF5_COMMON)
-    #   NETCDF_C_VERSION: $(NETCDF_C_NEW)
-    #   NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
-    # gcc5:
-    #   GCC_VERSION: 5
-    #   ZLIB_VERSION: $(ZLIB_COMMON)
-    #   HDF5_VERSION: $(HDF5_COMMON)
-    #   NETCDF_C_VERSION: $(NETCDF_C_NEW)
-    #   NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
-    # gcc6:
-    #   variables:
-    #   GCC_VERSION: 6
-    #   ZLIB_VERSION: $(ZLIB_COMMON)
-    #   HDF5_VERSION: $(HDF5_COMMON)
-    #   NETCDF_C_VERSION: $(NETCDF_C_NEW)
-    #   NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
+    gcc4:
+      GCC_VERSION: 4
+      ZLIB_VERSION: $(ZLIB_COMMON)
+      HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:
+      NETCDF_C_VERSION: $(NETCDF_C_NEW)
+      NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
+    gcc5:
+      GCC_VERSION: 5
+      ZLIB_VERSION: $(ZLIB_COMMON)
+      HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:
+      NETCDF_C_VERSION: $(NETCDF_C_NEW)
+      NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
+    gcc6:
+      variables:
+      GCC_VERSION: 6
+      ZLIB_VERSION: $(ZLIB_COMMON)
+      HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:
+      NETCDF_C_VERSION: $(NETCDF_C_NEW)
+      NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
     gcc7:
       variables:
       GCC_VERSION: 7
@@ -46,20 +49,22 @@ strategy:
       NETCDF_VERSION:
       NETCDF_C_VERSION: $(NETCDF_C_NEW)
       NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
-    # gcc8:
-    #   variables:
-    #   GCC_VERSION: 8
-    #   ZLIB_VERSION: $(ZLIB_COMMON)
-    #   HDF5_VERSION: $(HDF5_COMMON)
-    #   NETCDF_C_VERSION: $(NETCDF_C_NEW)
-    #   NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
-    # gcc9:
-    #   variables:
-    #   GCC_VERSION: 9
-    #   ZLIB_VERSION: $(ZLIB_COMMON)
-    #   HDF5_VERSION: $(HDF5_COMMON)
-    #   NETCDF_C_VERSION: $(NETCDF_C_NEW)
-    #   NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
+    gcc8:
+      variables:
+      GCC_VERSION: 8
+      ZLIB_VERSION: $(ZLIB_COMMON)
+      HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:
+      NETCDF_C_VERSION: $(NETCDF_C_NEW)
+      NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
+    gcc9:
+      variables:
+      GCC_VERSION: 9
+      ZLIB_VERSION: $(ZLIB_COMMON)
+      HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:
+      NETCDF_C_VERSION: $(NETCDF_C_NEW)
+      NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
     gcc7-old-netcdf:
       variables:
       GCC_VERSION: 7
@@ -68,6 +73,7 @@ strategy:
       NETCDF_VERSION:   4.1.2
       NETCDF_C_VERSION: 4.1.2
       NETCDF_FORTRAN_VERSION: none
+
 # Steps to build images
 steps:
 - task: Docker@2
