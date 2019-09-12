@@ -9,6 +9,7 @@ ENV CC=gcc \
     FC=gfortran \
     CPPFLAGS="-I/usr/local/include" \
     LDFLAGS="-L/usr/local/lib" \
+    LD_LIBRARY_PATH=/usr/local/lib \
     ZLIB_VERSION=1.2.11 \
     HDF5_VERSION=1.10.5 \
     NetCDF_C_VERSION=4.7.1 \
@@ -17,7 +18,6 @@ ENV CC=gcc \
 
 RUN apt-get update
 RUN apt-get -yq install bzip2 
-RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/local.conf && ldconfig
 
 # Install zlib
 RUN curl -L -o zlib.tar.gz https://www.zlib.net/zlib-${ZLIB_VERSION}.tar.gz \
