@@ -43,6 +43,7 @@ strategy:
       GCC_VERSION: 7
       ZLIB_VERSION: $(ZLIB_COMMON)
       HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:
       NETCDF_C_VERSION: $(NETCDF_C_NEW)
       NETCDF_FORTRAN_VERSION: $(NETCDF_FORTRAN_NEW)
     # gcc8:
@@ -64,9 +65,9 @@ strategy:
       GCC_VERSION: 7
       ZLIB_VERSION: $(ZLIB_COMMON)
       HDF5_VERSION: $(HDF5_COMMON)
+      NETCDF_VERSION:   4.1.2
       NETCDF_C_VERSION: 4.1.2
       NETCDF_FORTRAN_VERSION: none
-      NETCDF_VERSION:   4.1.2
 # Steps to build images
 steps:
 - task: Docker@2
