@@ -29,5 +29,5 @@ strategy:
 # container: 'ubuntu:latest' #$[ variables['containerImage'] ]
 
 steps:
-- script: echo Building container for gcc-${GCC_VERSION}!
+- script: echo Building container for gcc-$(GCC_VERSION)!
   displayName: 'Building container'
