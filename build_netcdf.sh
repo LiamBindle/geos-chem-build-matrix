@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "NetCDF_VERSION: ${$NetCDF_VERSION}"
+echo "NetCDF_VERSION: ${$NetCDF_C_VERSION}"
+echo "NetCDF_VERSION: ${$NetCDF_Fortran_VERSION}"
+
 if [ -z "$NetCDF_VERSION" ]
 then
     # Install NetCDF-C and NetCDF-Fortran
