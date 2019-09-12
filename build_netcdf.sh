@@ -28,8 +28,8 @@ else
     # Install NetCDF
     wget ftp://ftp.unidata.ucar.edu/pub/netcdf/old/netcdf-${NetCDF_VERSION}.tar.gz \
     &&  tar -xvf netcdf-${NetCDF_VERSION}.tar.gz \
-    &&  cd netcdf-${NetCDF_VERSION} --disable-dap-remote-tests \
-    &&  ./configure --prefix=/usr/local \
+    &&  cd netcdf-${NetCDF_VERSION} \
+    &&  ./configure --prefix=/usr/local --disable-dap-remote-tests \
     &&  make -j3 \
     &&  make check \
     &&  make install \
