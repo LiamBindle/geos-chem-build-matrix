@@ -12,12 +12,11 @@ pool:
 strategy:
   matrix:
     gcc5:
-      variables:
-        GCC_VERSION=6
-        ZLIB_VERSION=1.2.11
-        HDF5_VERSION=1.10.5
-        NetCDF_C_VERSION=4.7.1
-        NetCDF_Fortran_VERSION=4.4.5
+      GCC_VERSION: 6
+      ZLIB_VERSION: 1.2.11
+      HDF5_VERSION: 1.10.5
+      NetCDF_C_VERSION: 4.7.1
+      NetCDF_Fortran_VERSION: 4.4.5
     gcc6:
       variables:
         GCC_VERSION=6
@@ -25,8 +24,6 @@ strategy:
         HDF5_VERSION=1.10.5
         NetCDF_C_VERSION=4.7.1
         NetCDF_Fortran_VERSION=4.4.5
-
-# container: 'ubuntu:latest' #$[ variables['containerImage'] ]
 
 steps:
 - script: echo Building container for gcc-$(GCC_VERSION)!
