@@ -33,8 +33,11 @@ RUN curl -L -o hdf5.tar.bz2 http://www.hdfgroup.org/ftp/HDF5/current/src/hdf5-${
 &&  make install \
 &&  rm -rf *
 
+ARG NetCDF_C_VERSION
+ARG NetCDF_Fortran_VERSION
+ARG NetCDF_VERSION
 ADD build_netcdf.sh /download/build_netcdf.sh
-RUN chmod +x build_netcdf && ./build_netcdf.sh
+RUN chmod +x build_netcdf.sh && ./build_netcdf.sh
 
 # # Install NetCDF-C
 # ARG NetCDF_C_VERSION
