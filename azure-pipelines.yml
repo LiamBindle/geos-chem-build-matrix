@@ -26,15 +26,27 @@ strategy:
     #   NetCDF_Fortran_VERSION: 4.4.5
 
 steps:
-- script: |
-    echo Building container for gcc-$(GCC_VERSION)!
-    ./build.sh
-  displayName: 'Building container'
+# - script: |
+#     echo Building container for gcc-$(GCC_VERSION)!
+#     ./build.sh
+#   displayName: 'Building container'
 - task: Docker@2
-  displayName: Login to ACR
+  displayName: Login to Docker Hub
   inputs:
     command: login
     containerRegistry: DockerHub
+- task: Docker@2
+  displayName: Build
+  inputs:
+    command: build
+    repository: liambindle/gcc-netcdf-c-netcdf-fortran
+    tags: $(GCC_VERSION)-$(NETCDF_C_VERSION)-$(NETCDF_FORTRAN_VERSION)
+    arguments: |
+      --build-arg GCC_VERSION=${GCC_VERSION} 
+      --build-arg ZLIB_VERSION=${ZLIB_VERSION} 
+      --build-arg HDF5_VERSION=${HDF5_VERSION} 
+      --build-arg NetCDF_C_VERSION=${NETCDF_C_VERSION} 
+      --build-arg NetCDF_Fortran_VERSION=${NetCDF_FORTRAN_VERSION}
 - task: Docker@2
   displayName: Push image
   inputs:
