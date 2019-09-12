@@ -11,7 +11,7 @@ ENV CC=gcc \
     LD_LIBRARY_PATH=/usr/local/lib
 
 RUN apt-get update
-RUN apt-get -yq install bzip2 
+RUN apt-get -yq install bzip2 zip
 
 WORKDIR /download
 
