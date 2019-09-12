@@ -46,8 +46,9 @@ RUN wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-${NetCDF_C_V
 
 # Install NetCDF-Fortran
 ARG NetCDF_Fortran_VERSION
-RUN curl -L -o netcdf-fortran.tar.gz https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-fortran-${NetCDF_Fortran_VERSION}.tar.gz \
-&&  tar -xzvf netcdf-fortran.tar.gz --strip-components 1 \
+RUN wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-fortran-${NetCDF_Fortran_VERSION}.zip \
+&&  unzip netcdf-fortran-${NetCDF_Fortran_VERSION}.zip \
+&&  cd netcdf-fortran-${NetCDF_Fortran_VERSION} \
 &&  ./configure --prefix=/usr/local \
 &&  make -j3 \
 &&  make check \
