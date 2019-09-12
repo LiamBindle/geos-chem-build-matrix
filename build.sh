@@ -13,4 +13,4 @@ echo "netcdf-fortran version: ${NETCDF_FORTRAN_VERSION}"
 # NetCDF_Fortran_VERSION=4.4.5
 
 # Run docker build
-docker build . --build-arg GCC_VERSION=${GCC_VERSION} --build-arg ZLIB_VERSION=${ZLIB_VERSION} --build-arg HDF5_VERSION=${HDF5_VERSION} --build-arg NetCDF_C_VERSION=${NETCDF_C_VERSION} --build-arg NetCDF_Fortran_VERSION=${NetCDF_Fortran_VERSION} -t liambindle/gcc-netcdf-c-netcdf-fortran:${GCC_VERSION}-${NetCDF_C_VERSION}-${NETCDF_FORTRAN_VERSION}
+docker build . --build-arg GCC_VERSION=${GCC_VERSION} --build-arg ZLIB_VERSION=${ZLIB_VERSION} --build-arg HDF5_VERSION=${HDF5_VERSION} --build-arg NetCDF_C_VERSION=${NETCDF_C_VERSION} --build-arg NetCDF_Fortran_VERSION=${NetCDF_FORTRAN_VERSION} -t liambindle/gcc-netcdf-c-netcdf-fortran:${GCC_VERSION}-${NetCDF_C_VERSION}-${NETCDF_FORTRAN_VERSION}
